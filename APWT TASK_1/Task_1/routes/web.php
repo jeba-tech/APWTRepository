@@ -23,6 +23,3 @@ Route::get('/studentEdit/{name}/{id}',[StudentController::class, 'studentEdit'])
 
 Route::get('/studentCreate',[StudentController::class, 'studentCreate'])->name('studentCreate');
 Route::post('/studentCreate',[StudentController::class, 'studentCreateSubmitted'])->name('studentCreate');
-
-
-
