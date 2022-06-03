@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
-Route::get('/profile',[PagesController::class, 'profile'])->name('profile');
+Route::get('/team',[PagesController::class, 'team'])->name('team');
 
 //Student routes
 Route::get('/studentList',[StudentController::class, 'studentList'])->name('studentList');

@@ -9,10 +9,10 @@ class PagesController extends Controller
     //
    
 
-    public function profile(){
+    public function team(){
         
         $names=array("Mr. X", "Mr. Y", "Mr. Z");
-        return view('profile')
+        return view('team')
         
         ->with('names', $names);
     }
