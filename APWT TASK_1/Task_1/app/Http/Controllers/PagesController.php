@@ -7,12 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     //
-    public function index(){
-
-        $welcome = "Welcome";
-
-        return view('hello')->with('welcome', $welcome);
-    }
+   
 
     public function profile(){
         

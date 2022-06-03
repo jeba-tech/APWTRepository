@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\AboutController;
 |
 */
 
-Route::get('/',[PagesController::class, 'index'])->name('home');
+Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/profile',[PagesController::class, 'profile'])->name('profile');
 
 //Student routes
