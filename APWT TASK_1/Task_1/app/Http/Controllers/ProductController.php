@@ -4,29 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class ProductController extends Controller
 {
     //
     public function productList(){
-        $student = array();
+        $product = array();
 
         for($i=0; $i<5; $i++){
-            $student = array(
+            $product = array(
                 "name" => "Product " . ($i+1),
                 "id" =>"00" . ($i+1)
 
             );
-            $students[] = (object)$student; 
+            $products[] = (object)$product; 
         }
 
-        return view('student.productList')->with('students', $students);
+        return view('product.productList')->with('products', $products);
     }
     public function productEdit(Request $request){
         return $request->name;
     }
 
     public function contactUs(){
-        return view('student.contactUs');
+        return view('product.contactUs');
     }
     public function contactUsSubmitted(Request $request){
         $validate = $request->validate([

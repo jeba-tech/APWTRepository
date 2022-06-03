@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 
@@ -20,10 +20,10 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/team',[PagesController::class, 'team'])->name('team');
 
-//Student routes
-Route::get('/productList',[StudentController::class, 'productList'])->name('productList');
-Route::get('/productEdit/{name}/{id}',[StudentController::class, 'productEdit'])->name('productEdit');
+//product routes
+Route::get('/productList',[ProductController::class, 'productList'])->name('productList');
+Route::get('/productEdit/{name}/{id}',[ProductController::class, 'productEdit'])->name('productEdit');
 Route::get('/about',[AboutController::class, 'about'])->name('about');
 
-Route::get('/contactUs',[StudentController::class, 'contactUs'])->name('contactUs');
-Route::post('/contactUs',[StudentController::class, 'contactUsSubmitted'])->name('contactUs');
+Route::get('/contactUs',[ProductController::class, 'contactUs'])->name('contactUs');
+Route::post('/contactUs',[ProductController::class, 'contactUsSubmitted'])->name('contactUs');

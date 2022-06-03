@@ -11,7 +11,7 @@ class PagesController extends Controller
 
     public function team(){
         
-        $names=array("Mr. X", "Mr. Y", "Mr. Z");
+        $names=array("Mr. Jamal", "Ms. Rina", "Mr. Reza");
         return view('team')
         
         ->with('names', $names);
