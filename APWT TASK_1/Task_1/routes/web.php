@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,7 @@ Route::get('/profile',[PagesController::class, 'profile'])->name('profile');
 //Student routes
 Route::get('/studentList',[StudentController::class, 'studentList'])->name('studentList');
 Route::get('/studentEdit/{name}/{id}',[StudentController::class, 'studentEdit'])->name('studentEdit');
+Route::get('/about',[AboutController::class, 'about'])->name('about');
 
 Route::get('/studentCreate',[StudentController::class, 'studentCreate'])->name('studentCreate');
 Route::post('/studentCreate',[StudentController::class, 'studentCreateSubmitted'])->name('studentCreate');

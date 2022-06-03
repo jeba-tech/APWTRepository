@@ -12,7 +12,7 @@ class StudentController extends Controller
 
         for($i=0; $i<5; $i++){
             $student = array(
-                "name" => "Student " . ($i+1),
+                "name" => "Product " . ($i+1),
                 "id" =>"00" . ($i+1)
 
             );
@@ -31,10 +31,8 @@ class StudentController extends Controller
     public function studentCreateSubmitted(Request $request){
         $validate = $request->validate([
             "name"=>"required|min:5|max:20",
-            "id"=>"required",
-            'dob'=>'required',
             'email'=>'email',
-            'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/'
+            'text'=>"required|max:30"
         ],
         ['name.required'=>"Please put you name here"]
     );
