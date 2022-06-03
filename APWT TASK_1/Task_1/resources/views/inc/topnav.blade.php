@@ -1,5 +1,5 @@
-<a class="btn btn-primary" href="{{route('home')}}">Home</a>
-<a class="btn btn-primary" href="{{route('profile')}}">Profile</a>
-<a class="btn btn-primary" href="{{route('studentList')}}">Student List</a>
-<a class="btn btn-primary" href="{{route('studentCreate')}}">Student Create</a>
-<a class="btn btn-primary" href="">Login</a>
+<a class="btn btn-outline-secondary m-2 " href="{{route('home')}}">Home</a>
+<a class="btn btn-outline-secondary m-2 " href="{{route('profile')}}">Product</a>
+<a class="btn btn-outline-secondary m-2 " href="{{route('studentList')}}">Our Teams</a>
+<a class="btn btn-outline-secondary m-2 " href="{{route('studentCreate')}}">About us</a>
+<a class="btn btn-outline-secondary m-2 " href="">Contact Us</a>
