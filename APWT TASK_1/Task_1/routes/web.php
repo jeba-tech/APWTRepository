@@ -21,9 +21,9 @@ Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/team',[PagesController::class, 'team'])->name('team');
 
 //Student routes
-Route::get('/studentList',[StudentController::class, 'studentList'])->name('studentList');
-Route::get('/studentEdit/{name}/{id}',[StudentController::class, 'studentEdit'])->name('studentEdit');
+Route::get('/productList',[StudentController::class, 'productList'])->name('productList');
+Route::get('/productEdit/{name}/{id}',[StudentController::class, 'productEdit'])->name('productEdit');
 Route::get('/about',[AboutController::class, 'about'])->name('about');
 
-Route::get('/studentCreate',[StudentController::class, 'studentCreate'])->name('studentCreate');
-Route::post('/studentCreate',[StudentController::class, 'studentCreateSubmitted'])->name('studentCreate');
+Route::get('/contactUs',[StudentController::class, 'contactUs'])->name('contactUs');
+Route::post('/contactUs',[StudentController::class, 'contactUsSubmitted'])->name('contactUs');

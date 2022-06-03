@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h2>Contact Us</h2>
-<form action="{{route('studentCreate')}}" class="form-group" method="post">
+<form action="{{route('contactUs')}}" class="form-group" method="post">
     <!-- Cross Site Request Forgery-->
     {{csrf_field()}}
 

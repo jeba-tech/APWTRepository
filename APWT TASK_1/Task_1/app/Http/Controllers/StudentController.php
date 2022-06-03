@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     //
-    public function studentList(){
+    public function productList(){
         $student = array();
 
         for($i=0; $i<5; $i++){
@@ -19,16 +19,16 @@ class StudentController extends Controller
             $students[] = (object)$student; 
         }
 
-        return view('student.studentList')->with('students', $students);
+        return view('student.productList')->with('students', $students);
     }
-    public function studentEdit(Request $request){
+    public function productEdit(Request $request){
         return $request->name;
     }
 
-    public function studentCreate(){
-        return view('student.studentCreate');
+    public function contactUs(){
+        return view('student.contactUs');
     }
-    public function studentCreateSubmitted(Request $request){
+    public function contactUsSubmitted(Request $request){
         $validate = $request->validate([
             "name"=>"required|min:5|max:20",
             'email'=>'email',

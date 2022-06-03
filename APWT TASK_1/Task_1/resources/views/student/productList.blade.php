@@ -10,7 +10,7 @@
     <tr>
         <td>{{$student->name}}</td>
         <td>{{$student->id}}</td>
-        <td><a href="/studentEdit/{{$student->name}}/{{$student->id}}">Details</a></td>
+        <td><a href="/productEdit/{{$student->name}}/{{$student->id}}">Details</a></td>
     </tr>
     @endforeach
 
