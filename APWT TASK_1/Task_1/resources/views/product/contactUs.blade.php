@@ -33,12 +33,12 @@
             <span class="text-danger">{{$message}}</span>
         @enderror
     </div>
-    <div class="col-md-4 form-group ">
-        <span>Your Massage</span>
-        <input type="text" name="text" value="{{old('text')}}" class="form-control pb-5">
-       
+    
+    <div class="col-md-4 form-group">
+    <span>Your Massage</span>
+    <textarea type="text" name="text" value="{{old('text')}}" class="form-control pb-5"  rows="3" ></textarea>
     </div>
-    </div>
+   
     <div class="p-3">
     <input type="submit" class="btn btn-success" value="Submit" > 
 </div>                 

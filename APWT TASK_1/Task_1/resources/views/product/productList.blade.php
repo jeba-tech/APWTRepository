@@ -10,7 +10,7 @@
     <tr>
         <td>{{$product->name}}</td>
         <td>{{$product->id}}</td>
-        <td><a class="text-decoration-none text-white bg-secondary p-1 m-3 rounded "href="/productEdit/{{$product->name}}/{{$product->id}}">Details</a></td>
+        <td><a class="text-decoration-none text-white bg-secondary p-1 m-3 rounded" href="/productEdit/{{$product->name}}/{{$product->id}}">Details</a></td>
     </tr>
     @endforeach
 
