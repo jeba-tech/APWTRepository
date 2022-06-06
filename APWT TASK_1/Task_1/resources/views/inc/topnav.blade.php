@@ -1,5 +1,4 @@
 <a class="btn btn-outline-secondary m-2 " href="{{route('home')}}">Home</a>
-
 <a class="btn btn-outline-secondary m-2 " href="{{route('productList')}}">Product</a>
 <a class="btn btn-outline-secondary m-2 " href="{{route('team')}}">Our Teams</a>
 <a class="btn btn-outline-secondary m-2 " href="{{route('about')}}">About us</a>
