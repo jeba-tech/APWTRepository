@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function contactUsSubmitted(Request $request){
         $validate = $request->validate([
             "name"=>"required|min:5|max:20",
-            'email'=>'email',
+            'email'=>'required|email',
             'text'=>"required|max:30"
         ],
         ['name.required'=>"Please put you name here"]

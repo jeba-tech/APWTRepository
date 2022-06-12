@@ -13,7 +13,7 @@ class Login extends Controller
     public function loginSubmitted(Request $request){
         $validate = $request->validate([
             "name"=>"required|min:5|max:20",
-            'email'=>'email',
+            'email'=>'required|email',
             'password'=>'required|min:8'
 
         ],

@@ -5,7 +5,7 @@
     <!-- Cross Site Request Forgery-->
     {{csrf_field()}}
 
-    @if ($errors->any())
+    <!--@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -14,7 +14,7 @@
             </ul>
         </div>
     @endif
-
+     -->
 
     <div class="col-md-4 form-group">
         <span>Name</span>
@@ -28,6 +28,9 @@
     <div class="col-md-4 form-group">
         <span>Email</span>
         <input type="text" name="email" value="{{old('email')}}" class="form-control">
+        @error('email')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
     </div>
    
     <div class="col-md-4 form-group">

@@ -5,7 +5,7 @@
     <!-- Cross Site Request Forgery-->
     {{csrf_field()}}
 
-    @if ($errors->any())
+    <!--@if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -14,7 +14,7 @@
             </ul>
         </div>
     @endif
-
+    -->
 
     <div class="p-3">
     <div class="col-md-4 form-group">
@@ -37,6 +37,9 @@
     <div class="col-md-4 form-group">
     <span>Your Massage</span>
     <textarea type="text" name="text" value="{{old('text')}}" class="form-control pb-5"  rows="3" ></textarea>
+    @error('text')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
     </div>
    
     <div class="p-3">
