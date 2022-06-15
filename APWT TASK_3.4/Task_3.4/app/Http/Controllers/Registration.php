@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class Registration extends Controller
@@ -24,6 +25,19 @@ class Registration extends Controller
          'string'=>"Values must be string"
         ]
     );
-        return $request;
+
+        $customer = new Customer();
+        $customer->name= $request->name;
+        $customer->cus_id= $request->id;
+        $customer->dob= $request->dob;
+        $customer->email= $request->email;
+        $customer->phone= $request->phone;
+        $customer->password = $request->password;
+        $customer->save();
+        return redirect()->route('login');
+    }
+    public function customerDash(){
+        return view('customer.customerDash');
+
     }
 }

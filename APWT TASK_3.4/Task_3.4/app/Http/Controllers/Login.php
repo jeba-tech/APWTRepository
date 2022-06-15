@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\LoginModel;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class Login extends Controller
@@ -19,6 +22,21 @@ class Login extends Controller
         ],
         ['name.required'=>"Please put you name here"]
     );
-        return $request;
+         
+    $customer = Customer::where('name',$request->name)
+    ->where('email',$request->email)
+    ->where('password',$request->password)
+    ->first();
+
+if($customer){
+$request->session()->put('user',$customer->name);
+return redirect()->route('customerDash');
+}
+ return back();
+    }
+
+    public function logout(){
+        session()->forget('user');
+        return redirect()->route('login');
     }
 }

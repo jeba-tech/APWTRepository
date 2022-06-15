@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Registration;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\Login;
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/team',[PagesController::class, 'team'])->name('team');
+Route::get('/profile',[ProfileController::class, 'profile'])->name('profile');
 
 //product routes
 Route::get('/productList',[ProductController::class, 'productList'])->name('productList');
@@ -33,6 +35,9 @@ Route::post('/registration',[Registration::class, 'registrationSubmitted'])->nam
 
 Route::get('/login',[Login::class, 'login'])->name('login');
 Route::post('/login',[Login::class, 'loginSubmitted'])->name('login');
+Route::get('/logout',[Login::class,'logout'])->name('logout');
 
 Route::get('/contactUs',[ProductController::class, 'contactUs'])->name('contactUs');
 Route::post('/contactUs',[ProductController::class, 'contactUsSubmitted'])->name('contactUs');
+
+Route::get('/customer/dash', [Login::class,'customerDash'])->name('customerDash')->middleware('ValidCustomer'); 
