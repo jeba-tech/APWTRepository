@@ -40,4 +40,8 @@ Route::get('/logout',[Login::class,'logout'])->name('logout');
 Route::get('/contactUs',[ProductController::class, 'contactUs'])->name('contactUs');
 Route::post('/contactUs',[ProductController::class, 'contactUsSubmitted'])->name('contactUs');
 
+Route::get('/failedLogin',[Login::class, 'failedLogin'])->name('failedLogin');
+Route::get('/ok',[Login::class,'ok'])->name('ok');
+
+
 Route::get('/customer/dash', [Login::class,'customerDash'])->name('customerDash')->middleware('ValidCustomer'); 

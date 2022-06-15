@@ -36,8 +36,5 @@ class Registration extends Controller
         $customer->save();
         return redirect()->route('login');
     }
-    public function customerDash(){
-        return view('customer.customerDash');
-
-    }
+   
 }

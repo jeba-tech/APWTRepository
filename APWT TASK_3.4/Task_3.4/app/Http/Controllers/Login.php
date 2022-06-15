@@ -32,11 +32,25 @@ if($customer){
 $request->session()->put('user',$customer->name);
 return redirect()->route('customerDash');
 }
- return back();
+ else{
+    return redirect()->route('failedLogin');
+ }
     }
 
+    public function customerDash(){
+        return view('product.customerDash');
+
+    }
     public function logout(){
         session()->forget('user');
         return redirect()->route('login');
+    }
+    public function failedLogin(){
+        return view('failedLogin');
+
+    }
+    public function ok(){
+        return redirect()->route('login');
+
     }
 }
