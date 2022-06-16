@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LoginModel;
 use App\Models\Customer;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class Login extends Controller
@@ -35,12 +36,12 @@ return redirect()->route('customerDash');
  else{
     return redirect()->route('failedLogin');
  }
-    }
 
-    public function customerDash(){
-        return view('product.customerDash');
+
 
     }
+
+    
     public function logout(){
         session()->forget('user');
         return redirect()->route('login');
