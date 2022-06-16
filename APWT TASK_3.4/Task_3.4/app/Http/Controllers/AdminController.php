@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Customer;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use Illuminate\Http\Request;
@@ -137,22 +138,19 @@ return redirect()->route('adminDash');
  else{
     return redirect()->route('failedLogin');
  }
-
-
-
     }
 
-    
-    public function logout(){
+
+    public function adminLogout(){
         session()->forget('user');
-        return redirect()->route('login');
+        return redirect()->route('adminLogin');
     }
     public function failedLogin(){
         return view('failedLogin');
 
     }
     public function ok(){
-        return redirect()->route('login');
+        return redirect()->route('adminLogin');
 
     }
     
@@ -162,4 +160,36 @@ return redirect()->route('adminDash');
     }
 
 
+
+    public function createUser(){
+        return view('adminDash');
+    }
+    public function createUserSubmitted(Request $request){
+        $customer = new Customer();
+        $customer->name= $request->name;
+        $customer->email= $request->email;
+        $customer->phone= $request->phone;
+        $customer->password = $request->password;
+        $customer->save();
+        return redirect()->route('userList');
+    }
+    public function userList(){
+        $customers = Customer::all();
+        return view('userList')->with('customers', $customers);
+    }
+
+
+    public function userDelete(Request $request){
+        $customer = Customer::where('id', $request->id)->first();
+        $customer->delete();
+
+        return redirect()->route('userList');
+    }
+
+    
+    public function adminProfile(){
+       
+        return view('adminProfile');
+        
+    }
 }

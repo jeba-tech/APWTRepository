@@ -27,7 +27,6 @@ Route::get('/team',[PagesController::class, 'team'])->name('team');
 
 //product routes
 Route::get('/productList',[ProductController::class, 'productList'])->name('productList');
-Route::get('/productEdit/{name}/{id}',[ProductController::class, 'productEdit'])->name('productEdit');
 Route::get('/about',[AboutController::class, 'about'])->name('about');
 
 
@@ -39,10 +38,13 @@ Route::post('/adminRegistration',[AdminController::class, 'adminRegistrationSubm
 
 Route::get('/login',[Login::class, 'login'])->name('login');
 Route::post('/login',[Login::class, 'loginSubmitted'])->name('login');
-Route::get('/logout',[Login::class,'logout'])->name('logout');
+
 
 Route::get('/adminLogin',[AdminController::class, 'adminLogin'])->name('adminLogin');
 Route::post('/adminLogin',[AdminController::class, 'adminLoginSubmitted'])->name('adminLogin');
+
+Route::get('/logout',[Login::class,'logout'])->name('logout');
+Route::get('/admin/logout',[AdminController::class,'adminLogout'])->name('adminLogout');
 
 Route::get('/contactUs',[ProductController::class, 'contactUs'])->name('contactUs');
 Route::post('/contactUs',[ProductController::class, 'contactUsSubmitted'])->name('contactUs');
@@ -54,5 +56,16 @@ Route::get('/ok',[Login::class,'ok'])->name('ok');
 Route::get('/customer/dash', [CustomerController::class,'customerDash'])->name('customerDash')->middleware('ValidCustomer'); 
 Route::get('/admin/dash', [AdminController::class,'adminDash'])->name('adminDash')->middleware('ValidAdmin'); 
 
+
 Route::get('/customer/profile', [CustomerController::class,'customerProfile'])->name('customerProfile');
 Route::get('/user/edit', [CustomerController::class,'userEdit'])->name('userEdit');
+
+
+Route::post('/admin/dash',[AdminController::class, 'adminDash'])->name('adminDash')->middleware('ValidCustomer');
+Route::post('/admin/dash',[AdminController::class, 'createUserSubmitted'])->name('adminDash');
+Route::get('/admin/userList',[AdminController::class, 'userList'])->name('userList')->middleware('ValidCustomer');
+
+Route::get('/admin/profile', [AdminController::class,'adminProfile'])->name('adminProfile');
+
+Route::get('/userDelete/{id}',[AdminController::class, 'userDelete'])->name('userDelete');
+

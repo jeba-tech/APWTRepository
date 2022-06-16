@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
-    @if(Session::get('user')) {{Session::get('user')}} 
-    <h1>Admin Panel</h1>
+<h1>Admin Panel</h1>
     
+<h3>Admin Phone no:</h3> @if(Session::get('user')) {{Session::get('user')}} 
+  <br> 
 <h2>Add User</h2>
 <form action="{{route('adminDash')}}" class="form-group" method="post">
     {{csrf_field()}}
@@ -27,12 +27,12 @@
         <span>Password</span>
         <input type="text" name="password" value="{{old('password')}}" class="form-control">
     </div>
-    <input type="submit" class="btn btn-primary" value="Add">
+    <input type="submit" class="btn btn-primary mt-2" value="Add">
 </form><br>
-    <a class="btn btn-primary" href="{{route('customerProfile')}}">User List</a>
+    <a class="btn btn-primary" href="{{route('userList')}}">User List</a>
 
-    <a class="btn btn-primary" href="{{route('userEdit')}}">Edit Profile </a>
+    <a class="btn btn-primary" href="{{route('adminProfile')}}">Profile </a>
 
-       <a class="btn btn-danger" href="{{route('logout')}}">Log out </a>
+       <a class="btn btn-danger" href="{{route('adminLogout')}}">Log out </a>
     @endif 
 @endsection 
