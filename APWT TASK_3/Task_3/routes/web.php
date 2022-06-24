@@ -49,23 +49,28 @@ Route::get('/admin/logout',[AdminController::class,'adminLogout'])->name('adminL
 Route::get('/contactUs',[ProductController::class, 'contactUs'])->name('contactUs');
 Route::post('/contactUs',[ProductController::class, 'contactUsSubmitted'])->name('contactUs');
 
-Route::get('/failedLogin',[Login::class, 'failedLogin'])->name('failedLogin');
-Route::get('/ok',[Login::class,'ok'])->name('ok');
+Route::get('/failedLogin',[Login::class, 'failedLogin'])->name('failedLogin')->middleware('ValidCustomer');
+Route::get('/ok',[Login::class,'ok'])->name('ok')->middleware('ValidCustomer');
 
 
 Route::get('/customer/dash', [CustomerController::class,'customerDash'])->name('customerDash')->middleware('ValidCustomer'); 
 Route::get('/admin/dash', [AdminController::class,'adminDash'])->name('adminDash')->middleware('ValidAdmin'); 
 
 
-Route::get('/customer/profile', [CustomerController::class,'customerProfile'])->name('customerProfile');
-Route::get('/user/edit', [CustomerController::class,'userEdit'])->name('userEdit');
+Route::get('/customer/profile', [CustomerController::class,'customerProfile'])->name('customerProfile')->middleware('ValidCustomer');
+
+Route::get('/userEdit/{id}',[AdminController::class, 'userEdit'])->name('userEdit')->middleware('ValidAdmin');
+Route::post('/userEdit',[AdminController::class, 'userEditSubmitted'])->name('userEdit')->middleware('ValidAdmin');
+
+//Route::get('/editCustomer/{id}',[CustomerController::class, 'editCustomer'])->name('editCustomer')->middleware('ValidCustomer');
+//Route::post('/editCustomer',[CustomerController::class, 'editSubmitted'])->name('editCustomer')->middleware('ValidCustomer');
 
 
-Route::post('/admin/dash',[AdminController::class, 'adminDash'])->name('adminDash')->middleware('ValidCustomer');
+Route::post('/admin/dash',[AdminController::class, 'adminDash'])->name('adminDash')->middleware('ValidAdmin');
 Route::post('/admin/dash',[AdminController::class, 'createUserSubmitted'])->name('adminDash');
-Route::get('/admin/userList',[AdminController::class, 'userList'])->name('userList')->middleware('ValidCustomer');
+Route::get('/admin/userList',[AdminController::class, 'userList'])->name('userList')->middleware('ValidAdmin');
 
-Route::get('/admin/profile', [AdminController::class,'adminProfile'])->name('adminProfile');
+Route::get('/admin/profile', [AdminController::class,'adminProfile'])->name('adminProfile')->middleware('ValidAdmin');
 
-Route::get('/userDelete/{id}',[AdminController::class, 'userDelete'])->name('userDelete');
+Route::get('/userDelete/{id}',[AdminController::class, 'userDelete'])->name('userDelete')->middleware('ValidAdmin');
 

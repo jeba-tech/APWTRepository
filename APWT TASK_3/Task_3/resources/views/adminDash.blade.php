@@ -28,6 +28,7 @@
         <input type="text" name="password" value="{{old('password')}}" class="form-control">
     </div>
     <input type="submit" class="btn btn-primary mt-2" value="Add">
+
 </form><br>
     <a class="btn btn-primary" href="{{route('userList')}}">User List</a>
 

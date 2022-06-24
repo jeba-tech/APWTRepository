@@ -5,7 +5,6 @@
 <br><br>
    
     <a class="btn btn-primary" href="{{route('customerProfile')}}">Profile </a>
-    <a class="btn btn-primary" href="{{route('userEdit')}}">Edit Profile </a>
 
        <a class="btn btn-danger" href="{{route('logout')}}">Log out </a>
     @endif 
