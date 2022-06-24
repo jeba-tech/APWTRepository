@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h2>Edit Profile</h2>
-<form action="{{route('userEdit')}}" class="form-group" method="post">
+<form action="{{route('editUser')}}" class="form-group" method="post">
     <!-- Cross Site Request Forgery-->
     {{csrf_field()}}
 

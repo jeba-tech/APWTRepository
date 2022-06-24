@@ -160,22 +160,7 @@ return redirect()->route('adminDash');
     }
 
 
-    public function userEdit(Request $request){
-        $customer = Customer::where('id', $request->id)->first();
-        
-        return view('userEdit')->with('customer', $customer);
-        
-    }
-    public function userEditSubmitted(Request $request){
-        $customer = customer::where('id', $request->id)->first();
-        $customer->name = $request->name;
-        $customer->email = $request->email;
-        $customer->phone = $request->phone;
-        $customer->password = $request->password;
-        $customer->save();
-        return redirect()->route('userEdit');
-
-    }
+   
 
 
     public function createUser(){
@@ -195,6 +180,23 @@ return redirect()->route('adminDash');
         return view('userList')->with('customers', $customers);
     }
 
+
+    public function editUser(Request $request){
+        $customer = Customer::where('id', $request->id)->first();
+        
+        return view('editUser')->with('customer', $customer);
+        
+    }
+    public function editUserSubmitted(Request $request){
+        $customer = Customer::where('id', $request->id)->first();
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->phone = $request->phone;
+        $customer->password = $request->password;
+        $customer->save();
+        return redirect()->route('editUser');
+
+    }
 
     public function userDelete(Request $request){
         $customer = Customer::where('id', $request->id)->first();

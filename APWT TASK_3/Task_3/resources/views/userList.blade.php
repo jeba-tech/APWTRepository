@@ -14,7 +14,7 @@
             <td class="fs-4">{{$customer->phone}}</td>
             <td class="fs-4">{{$customer->email}}</td>
             <td class="fs-4">{{$customer->id}}</td>
-            <td><a class="text-decoration-none text-white bg-success p-1 m-3 rounded" href="/userEdit/{{$customer->id}}">Edit</a></td>
+            <td><a class="text-decoration-none text-white bg-success p-1 m-3 rounded" href="/editUser/{{$customer->id}}">Edit</a></td>
             <td><a class="text-decoration-none text-white bg-dark p-1 m-3 rounded" href="/userDelete/{{$customer->id}}">Delete</a></td>
 
         </tr>

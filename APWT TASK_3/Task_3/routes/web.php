@@ -59,8 +59,8 @@ Route::get('/admin/dash', [AdminController::class,'adminDash'])->name('adminDash
 
 Route::get('/customer/profile', [CustomerController::class,'customerProfile'])->name('customerProfile')->middleware('ValidCustomer');
 
-Route::get('/userEdit/{id}',[AdminController::class, 'userEdit'])->name('userEdit')->middleware('ValidAdmin');
-Route::post('/userEdit',[AdminController::class, 'userEditSubmitted'])->name('userEdit')->middleware('ValidAdmin');
+Route::get('/editUser/{id}',[AdminController::class, 'editUser'])->name('editUser')->middleware('ValidAdmin');
+Route::post('/editUser',[AdminController::class, 'editUserSubmitted'])->name('editUser')->middleware('ValidAdmin');
 
 //Route::get('/editCustomer/{id}',[CustomerController::class, 'editCustomer'])->name('editCustomer')->middleware('ValidCustomer');
 //Route::post('/editCustomer',[CustomerController::class, 'editSubmitted'])->name('editCustomer')->middleware('ValidCustomer');
