@@ -194,7 +194,7 @@ return redirect()->route('adminDash');
         $customer->phone = $request->phone;
         $customer->password = $request->password;
         $customer->save();
-        return redirect()->route('editUser');
+        return redirect()->route('userList');
 
     }
 
