@@ -211,4 +211,8 @@ return redirect()->route('adminDash');
         return view('adminProfile');
         
     }
+
+    public function APIList(){
+        return Customer::all();
+    }
 }
