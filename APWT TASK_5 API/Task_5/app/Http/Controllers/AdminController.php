@@ -215,4 +215,24 @@ return redirect()->route('adminDash');
     public function APIList(){
         return Customer::all();
     }
+
+
+    public function APIPost(Request $req){
+        $customer = new Customer();
+        $customer->id= $req->id;
+        $customer->name= $req->name;
+        $customer->cus_id= $req->cus_id;
+        $customer->dob= $req->dob;
+        $customer->email= $req->email;
+        $customer->phone= $req->phone;
+        $customer->password= $req->password;
+        $customer->save();
+
+
+     
+        return $req;
+    }
 }
+
+
+

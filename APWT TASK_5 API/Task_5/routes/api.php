@@ -23,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //API test
 
 Route::get('/admin/userList',[AdminController::class,'APIList']);
+Route::post('/admin/userList',[AdminController::class,'APIPost']);
