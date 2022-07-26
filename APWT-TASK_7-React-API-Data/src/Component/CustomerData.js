@@ -34,5 +34,5 @@ const CustomerData = (props) => {
             </div>
       );
 };
-
+//export
 export default CustomerData;
