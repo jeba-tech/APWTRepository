@@ -29,13 +29,13 @@ const Login = () => {
       }
 
       return (
-            <div>
+            <div style={{ padding: "100px", background: "#D2B48C", margin: "100px" }}>
                   <form>
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        <input style={{ margin: "20px" }} type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input><br></br>
+                        <input style={{ margin: "20px" }} type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input><br></br>
 
                   </form>
-                  <button onClick={loginSubmit}>Login</button>
+                  <button style={{ margin: "20px" }} onClick={loginSubmit}>Login</button>
             </div>
 
       )

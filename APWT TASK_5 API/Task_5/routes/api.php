@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //API test
 
-Route::get('/admin/userList',[AdminController::class,'APIList']);
-Route::post('/admin/userList',[AdminController::class,'APIPost']);
+Route::get('/admin/userList',[AdminController::class,'APIList'])->middleware('APIAuth');
+Route::post('/admin/userList',[AdminController::class,'APIPost'])->middleware('APIAuth');
+//Route::get('/admin/userList',[AdminController::class,'APIList']);
+//Route::post('/admin/userList',[AdminController::class,'APIPost']);
+
+Route::post('/login', [LoginAPIController::class, 'login']);
+Route::post('/logout', [LoginAPIController::class, 'logout']);
