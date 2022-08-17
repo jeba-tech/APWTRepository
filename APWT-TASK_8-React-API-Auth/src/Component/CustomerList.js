@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import CustomerData from './CustomerData';
+import Instance from './Instance';
 
 const CustomerList = () => {
 
@@ -8,7 +9,7 @@ const CustomerList = () => {
       const [users, setUsers] = useState([]);
 
       useEffect(() => {
-            axios.get("http://127.0.0.1:8000/api/admin/userList")
+            Instance.get("/admin/userList")
                   .then(resp => {
                         console.log(resp);
                         setUsers(resp.data);

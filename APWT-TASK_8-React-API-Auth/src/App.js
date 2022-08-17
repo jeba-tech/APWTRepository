@@ -7,6 +7,8 @@ import Footer from './Component/Footer';
 import CustomerList from './Component/CustomerList';
 import CustomerDetails from './Component/CustomerDetails';
 import NavBar from './Component/NavBar';
+import Login from './Component/Login';
+import SignOut from './Component/SignOut';
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
         <Route path="/CustomerDetails/:id/:name/:cus_id/:dob/:email/:phone" element={<CustomerDetails />}></Route>
         <Route path="/CustomerList" element={<CustomerList />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        {/* <Route exact path='/login' /> */}
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/signout' element={<SignOut />} />
 
 
       </Routes>

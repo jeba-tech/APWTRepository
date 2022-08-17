@@ -10,6 +10,8 @@ const NavBar = () => {
                                     <Link className="nav-link px-3 text-white fw-bold" to="/">Home</Link>
                                     <Link className="nav-link px-3 text-white fw-bold" to="/contact">Contact</Link>
                                     <Link className="nav-link px-3 text-white fw-bold" to="/CustomerList">CustomerList</Link>
+                                    <Link className="nav-link px-3 text-white fw-bold" to="/login" > < b > Login </b></Link >
+                                    <Link className="nav-link px-3 text-white fw-bold" to="/signout" > < b > SignOut </b></Link >
                               </div>
                         </div>
                   </nav>
