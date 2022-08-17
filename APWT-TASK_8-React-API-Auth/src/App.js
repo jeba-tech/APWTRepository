@@ -19,6 +19,7 @@ function App() {
         <Route path="/CustomerDetails/:id/:name/:cus_id/:dob/:email/:phone" element={<CustomerDetails />}></Route>
         <Route path="/CustomerList" element={<CustomerList />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        {/* <Route exact path='/login' /> */}
 
 
       </Routes>
